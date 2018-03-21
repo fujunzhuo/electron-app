@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    _border:1px dashed red;
+}
+html,body{
+    background: black;
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+a{
+    text-decoration: none;
+}
+input{
+    outline: none;
+}
+.clear{
+    clear:both;
+}
+.drag-header{;
+    width: 100%;
+    height: 50px;
+    background: #4496EC;
+    -webkit-app-region: drag;
+}
+.login-container{
+    width: 350px;
+    height: 390px;
+    background: white;
+}
+.lbtn-close{
+    position: absolute;
+    top:2px;
+    right:5px;
+    font-size: 33px;
+    color:white;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+    transition: all 0.5s ease 0s;
+}
+.lbtn-close:hover{
+    color:red;
+}
+.login-form{
+    padding: 10px 20px;
+}
+.switch-account{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 5px 12px 5px;
+    width: 90%;
+    margin: 20px auto;
+}
+.switch-account .pre-phone{
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 5px;
+    color:#bbb;
+}
+.switch-account .login-email{
+    display: none;
+    color: #bbb;
+    margin-left: 14px;
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: 2px;
+    font-size: 15px;
+}
+.switch-account .swithch-login{
+    font-size: 12px;
+    color:#2196f3;
+    float: right;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+.password-div{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 5px;
+    width: 90%;
+    margin: 20px auto;
+}
+.password-div .img-password{
+    margin-left: 14px;
+    margin-right: 5px;
+    color:#bbb;
+    vertical-align: middle;
+}
+.login-input{
+    display: inline-block;
+    width: 140px;
+    border: none;
+    color:#313131;
+    font-size: 12px;
+}
+.login-input.loginpwd{
+    width: 234px;
+    vertical-align: middle;
+}
+.login-submit{
+    width: 93%;
+    display: block;
+    background: #4496EC;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    padding: 10px 5px;
+    border:none;
+    margin: 20px auto;
+    letter-spacing: 8px;
+    cursor: pointer;
+}
+.login-footer{
+    height:20px;
+    font-size: 12px;
+    width: 93%;
+    margin: auto;
+}
+.login-footer .login-fLeft{
+    height: 20px;
+    float: left;
+    color: #7E7E7E;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+.login-footer .login-fLeft label{
+    cursor: pointer;
+}
+.login-footer .login-fLeft .login-checkbox{
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.login-footer .login-fRight{
+    height:20px;
+    float: right;
+    vertical-align: middle;
+}
+.login-footer .login-fRight a{
+    display: inline-block;
+    color: #4496EC;
+    vertical-align: middle;
+    margin: auto 5px;
+}
+.login-footer .login-fRight a:hover{
+    text-decoration: underline;
+}
+.login-footer .login-fRight .verticalLine{
+    display: inline-block;
+    color: #4496EC;
+    height:12px;
+    width: 0;
+    border-right:1px solid #4496EC;
+    vertical-align: middle;
+}
+.third-login{
+    height: 0;
+    width: 95%;
+    border-bottom:1px solid #bbb;
+    text-align: center;
+    margin:25px auto;
+}
+.third-login .third-login-text{
+    color:#bbb;
+    font-size: 12px;
+    width: 40%;
+    margin:0 auto;
+    position: relative;
+    top:-8px;
+    background: rgba(255,255,255,1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

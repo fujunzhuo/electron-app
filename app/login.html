@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>教育口客户端</title>
+    <link rel="stylesheet" href="css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="login-container">
+    <div class="drag-header">
+        <i class="iconfont icon-close lbtn-close"></i>
+    </div>
+    <form action="javascript:;" method="post" class="login-form">
+        <div class="login-header">
+            <div class="switch-account">
+                <div class="pre-phone">+86</div>
+                <i class="iconfont icon-email login-email"></i>
+                <input type="text" placeholder="手机号" name="username" class="login-input loginAccount">
+                <a href="javascript:;" class="swithch-login">切换邮箱登录</a>
+            </div>
+            <div class="password-div">
+                <i class="iconfont icon-password img-password"></i>
+                <input type="password" placeholder="密码" name="password" class="login-input loginpwd">
+            </div>
+            <input type="submit" value="登录" class="login-submit">
+        </div>
+        <div class="login-footer">
+            <div class="login-fLeft">
+                <label>
+                    <input type="checkbox" checked name="rememberPwd" class="login-checkbox">
+                    在电脑上保存登录
+                </label>
+            </div>
+            <div class="login-fRight">
+                <a href="javascript:;">忘记密码?</a>
+                <div class="verticalLine"></div>
+                <a href="javascript:;">新用户注册</a>
+            </div>
+        </div>
+        <div class="third-login">
+            <div class="third-login-text">第三方账号登录</div>
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        const ipc = require('electron').ipcRenderer;
+
+        //关闭窗口
+        $('.lbtn-close').click(function(){
+            ipc.send('close-window');
+        });
+
+        //切换邮箱登录
+        $('.swithch-login').click(function () {
+            var email = '切换邮箱登录';
+            var phone = '切换手机登录';
+            var val = $(this).text();
+            if(val == email){
+                $('.login-input.loginAccount').prop('placeholder','邮箱');
+                $(this).text(phone);
+                $('.pre-phone').hide();
+                $('.login-email').show();
+            }
+            else {
+                $('.login-input.loginAccount').prop('placeholder','手机号');
+                $(this).text(email);
+                $('.login-email').hide();
+                $('.pre-phone').show();
+            }
+        });
+    })
+
+</script>
+</body>
+</html>

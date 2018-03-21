@@ -1,20 +1,16 @@
 {
-  "name": "electron-quick-start",
+  "name": "jiaoyoukou",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://git.coding.net/pengbosoft/jiaoyukou.git",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "jiaoyoukou"
   ],
-  "author": "GitHub",
+  "author": "alan",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.8.2"

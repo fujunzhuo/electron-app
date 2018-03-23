@@ -12,36 +12,45 @@
 <div class="login-container">
     <div class="drag-header">
         <i class="iconfont icon-close lbtn-close"></i>
+        <i class="minimize"></i>
     </div>
-    <form action="javascript:;" method="post" class="login-form">
+    <form class="login-form">
         <div class="login-header">
             <div class="switch-account">
                 <div class="pre-phone">+86</div>
                 <i class="iconfont icon-email login-email"></i>
-                <input type="text" placeholder="手机号" name="username" class="login-input loginAccount">
+                <input type="text" placeholder="手机号" id="username" class="login-input loginAccount">
                 <a href="javascript:;" class="swithch-login">切换邮箱登录</a>
             </div>
             <div class="password-div">
                 <i class="iconfont icon-password img-password"></i>
-                <input type="password" placeholder="密码" name="password" class="login-input loginpwd">
+                <input type="password" placeholder="密码" id="password" class="login-input loginpwd">
             </div>
             <input type="submit" value="登录" class="login-submit">
         </div>
         <div class="login-footer">
             <div class="login-fLeft">
                 <label>
-                    <input type="checkbox" checked name="rememberPwd" class="login-checkbox">
+                    <input type="checkbox" checked id="rememberme" class="login-checkbox">
                     在电脑上保存登录
                 </label>
             </div>
             <div class="login-fRight">
                 <a href="javascript:;">忘记密码?</a>
                 <div class="verticalLine"></div>
-                <a href="javascript:;">新用户注册</a>
+                <a href="javascript:;" id="user-register">新用户注册</a>
             </div>
         </div>
         <div class="third-login">
             <div class="third-login-text">第三方账号登录</div>
+        </div>
+        <div class="third-login-btn">
+            <a href="javascript:;" title="微信登录">
+                <i class="weixin-icon"></i>
+            </a>
+            <a href="javascript:;" title="个人QQ登录">
+                <i class="personal-qq-icon"></i>
+            </a>
         </div>
     </form>
 </div>
@@ -52,6 +61,16 @@
         //关闭窗口
         $('.lbtn-close').click(function(){
             ipc.send('close-window');
+        });
+
+        //最小化窗口
+        $('.minimize').click(function(){
+            ipc.send('minimize-window');
+        });
+
+        //新用户注册
+        $('#user-register').click(function () {
+            ipc.send('user-register');
         });
 
         //切换邮箱登录
@@ -72,8 +91,29 @@
                 $('.pre-phone').show();
             }
         });
-    })
 
+
+        var url = 'http://www.jiaoyukou.com/sso/Authorize?client_id=pbeduapp&redirect_uri=http%3A%2F%2Fwww.jiaoyukou.com%2Fhome&response_type=code';
+
+        $.ajax({
+            type:'post',
+            url: url,
+            data:{
+                reg_prefix	:86,
+                username	:'18620308828',
+                logintype	:'phone',
+                password	:'abc123456',
+                lastFiger	:'1521708337225',
+                rememberme	:1
+            },
+            success:function (res) {
+                console.log('res',res)
+            }
+        });
+
+
+
+    })
 </script>
 </body>
 </html>

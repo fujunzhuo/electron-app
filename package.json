@@ -1,5 +1,5 @@
 {
-  "name": "jiaoyoukou",
+  "name": "jiaoyukou",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -8,7 +8,7 @@
   },
   "repository": "https://git.coding.net/pengbosoft/jiaoyukou.git",
   "keywords": [
-    "jiaoyoukou"
+    "jiaoyukou"
   ],
   "author": "alan",
   "license": "CC0-1.0",

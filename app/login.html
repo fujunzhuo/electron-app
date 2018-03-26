@@ -16,6 +16,7 @@
     </div>
     <form class="login-form">
         <div class="login-header">
+            <div class="login-error-msg">请输入正确的手机号码</div>
             <div class="switch-account">
                 <div class="pre-phone">+86</div>
                 <i class="iconfont icon-email login-email"></i>
@@ -26,7 +27,7 @@
                 <i class="iconfont icon-password img-password"></i>
                 <input type="password" placeholder="密码" id="password" class="login-input loginpwd">
             </div>
-            <input type="submit" value="登录" class="login-submit">
+            <input type="button" value="登录" class="login-submit">
         </div>
         <div class="login-footer">
             <div class="login-fLeft">
@@ -92,19 +93,65 @@
             }
         });
 
+        $('.login-submit').click(function () {
+            var regPhone = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+            var regEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            var regPwd = /^[a-zA-Z]\w{5,17}$/;
+            var email = '切换邮箱登录';
+            var phone = '切换手机登录';
+            var btnText = $('.swithch-login').text();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            if(btnText == email){
+                if(username == ''){
+                    $('.login-error-msg').text('手机号不能为空').show();
+                    return false;
+                }
+                if(!regPhone.test(username)){
+                    $('.login-error-msg').text('请输入正确的手机号').show();
+                    return false;
+                }
+            }
+            if(btnText == phone){
+                if(username == ''){
+                    $('.login-error-msg').text('邮箱不能为空').show();
+                    return false;
+                }
+                if(!regEmail.test(username)){
+                    $('.login-error-msg').text('请输入正确的邮箱').show();
+                    return false;
+                }
+            }
 
-        var url = 'http://www.jiaoyukou.com/sso/Authorize?client_id=pbeduapp&redirect_uri=http%3A%2F%2Fwww.jiaoyukou.com%2Fhome&response_type=code';
+            if(password == ''){
+                $('.login-error-msg').text('密码不能为空').show();
+                return false;
+            }
+/*
+            if(!regPwd.test(password)){
+                $('.login-error-msg').text('密码格式错误').show();
+                return false;
+            }
+*/
+
+            $('.login-error-msg').text('登录成功').show();
+
+        });
+
+
+        //var url = 'http://www.jiaoyukou.com/eduapp/app/Server/login';
+        var url = 'http://localhost/eduapp/app/Server/login';
 
         $.ajax({
             type:'post',
             url: url,
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            },
             data:{
-                reg_prefix	:86,
-                username	:'18620308828',
-                logintype	:'phone',
+                phone	:'18620308828',
                 password	:'abc123456',
-                lastFiger	:'1521708337225',
-                rememberme	:1
             },
             success:function (res) {
                 console.log('res',res)
@@ -114,6 +161,7 @@
 
 
     })
+
 </script>
 </body>
 </html>

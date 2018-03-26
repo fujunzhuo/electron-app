@@ -7,9 +7,9 @@ let mainWindow
 function createWindow () {
   mainWindow = new BrowserWindow({
       width: 430,
-      height: 492,
-      maxWidth:430,
-      maxHeight:492,
+      height: 527,
+      // maxWidth:430,
+      // maxHeight:492,
       nodeIntegrationInWorker:true,
       frame: false,
       center: true,

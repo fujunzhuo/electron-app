@@ -40,7 +40,7 @@ input{
 }
 .login-container {
     width: 430px;
-    height: 492px;
+    height: 527px;
     background: #EBF2F9;
     box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
 }
@@ -60,13 +60,24 @@ input{
 .login-form{
     padding: 10px 20px;
 }
+.login-header .login-error-msg{
+    width: 75%;
+    background: #ffd0d0;
+    color: #ce4040;
+    padding: 7px 17px;
+    line-height: 20px;
+    margin: 10px auto 0 auto;
+    font-size: 12px;
+    border-radius: 5px;
+    display: none;
+}
 .switch-account{
     display: block;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px 5px 12px 5px;
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto 20px auto;
     background: white;
 }
 .switch-account .pre-phone{
